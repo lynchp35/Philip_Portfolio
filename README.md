@@ -1,3 +1,8 @@
+Philip Lynch
+## Introduction
+My name is Philip Lynch, I am currently a 4th year Data Science student in Dublin City University (DCU).
+Contact details:
+Email: philip.lynch35@mail.dcu.ie, LinkedIn: 
 # Project 01: Artist Recommender System
 
 The goal for this project was to build an artist recommendation system based on the last FM dataset. The dataset can be found through this [link](https://grouplens.org/datasets/hetrec-2011/).
