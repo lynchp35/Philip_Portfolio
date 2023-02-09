@@ -29,7 +29,7 @@ Example recommendation using content-based filtering.
 
 # Project 02: Film Review Sentiment Analysis.
 
-The goal of this project is to develop a Naïve Bayes classifier to analyse the sentiment of a film review. The data used came from **, which includes 2000 reviews evenly split between the two classes, negative or positive. The project involves five main parts these are:
+The goal of this project is to develop a Naïve Bayes classifier to analyse the sentiment of a film review. The data used was provided [Cornell](https://www.cs.cornell.edu/people/pabo/movie-review-data/), which includes 2000 reviews evenly split between the two classes, negative or positive. The project involves five main parts these are:
 
 1. Pre-processing, the code for this can be found in the Python script [pre_processing.py](). This file pre-processes the film reviews depending on the parameters passed, the possible parameters are;
 
@@ -77,9 +77,19 @@ Most parameters had similar accuracy but I decided to continue with the paramete
 
 ![BoxPlot](imgs\nbc_t_hp_acc.PNG)
 
-I then picked the value of 2 for alpha.
 
 ### Test set accuracy
+
+I then finally evaluated the model using the unseen test set. I trained the model using the following tuned hyper-parameters:
+
+* Keep Unique (ku): True
+* Remove Punctuation (rp): False
+* Expand Negation (exn): True
+* Alpha (a): 2.0
+
+This model achived an accuracy of 86% and had the confusion presented below:
+
+![1675955377573](image/README/1675955377573.png)
 
 # Irish Property Price Analysis
 
