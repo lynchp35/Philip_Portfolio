@@ -1,8 +1,28 @@
-# Philip_Portfolio
-Data Science Portfolio
+# Philip's Portfolio
 
 
-# Project 1: NBC
+# Project 01: Artist Recommender System
+
+The goal for this project was to build an artist recommendation system based on the last FM dataset. The dataset can be found through this [link](https://grouplens.org/datasets/hetrec-2011/).
+
+My work can be split into four main parts.
+
+1. The first part is my initial analysis of the data ([01_initial data_analysis.ipynb](https://github.com/lynchp35/DS_4th_Year/blob/main/CA4015/Assignment%203%20Recommender%20Systems/01_initial_data_analysis.ipynb "Python Notebook")), here I do some simple cleaning and pre-processing of the data using the Python libraries Pandas for data manipulation, Matplotlib and Seaborn for data visualisation.
+2. The next part includes two Python scripts web_scraper.py and web_scraper_tags.py, both scripts are used to scrape additional data from the last FM website. The additional data that I scraped included the top genres related to an artist and similiar artists. To be able to scrape this data I used the Python library BeautifulSoup.
+3. The third part can be found in the notebook [02_further_data_analysis.ipynb,](https://github.com/lynchp35/DS_4th_Year/blob/main/CA4015/Assignment%203%20Recommender%20Systems/02_further_data_analysis.ipynb) I used this notebook to do further analysis of the processed data and also looked at the additional scraped data.
+4. The final and most interesting part is the recommendation system found in the notebook [recommender_system.ipynb.](https://github.com/lynchp35/DS_4th_Year/blob/main/CA4015/Assignment%203%20Recommender%20Systems/recommender_system.ipynb) The motivation that I had for this notebook was to create a similar user experience to the setup process of Spotify. I wanted to create an interactive application where a user can input data on themselves such as their favourite music genres, artists, and their rating of them. To be able to make an interactive application I used the Python libraries Ipywidgets and IPython.  After collecting the new users data I used differenet methods for artist recommendation:
+   1. The first method is a content based filtering, this envolved using a pretrained word embedding from the library SentenceTransformer. I used the users favourite genres and the genres of the artists to compute a similirty score between them. I then return the top 20 most similiar artists based on their score.
+   2. The second method used collabortive filtering, this time I used the library Suprise and the Singular Value Decomposition(SVD) model. This model aims to recommend artists to a user based on the assumption that similiar users like similiar artists. i.e If user1 likes artist1, artist2 and user1 likes artist1, artist2, artist3, user1 may also like artist3.
+
+Below I show how I used Ipywidgets and IPython to collect the user's data.
+
+![1675940673464](image/TEST/1675940673464.png "Interactive Example.")
+
+Example recommendation using content based filtering.
+
+![1675941647819](image/TEST/1675941647819.png)
+
+# Project 02: Naive Bayes Classifier
 
 In this section I include two main parts.
 
@@ -53,7 +73,7 @@ The scripts starts by pre-processing the film reviews with the current -ku, -rp 
 
 ![Command Line Output](imgs/cv_02.PNG "Running The Python Script")
 
-Once the cross validation model is done the results are saved to "cross_validation_results/constant_alpha.csv". 
+Once the cross validation model is done the results are saved to "cross_validation_results/constant_alpha.csv".
 
 If you want to tune alpha you can run the line below. This tunes alpha while keeping -ku, -rp and -exn constant.
 
