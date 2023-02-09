@@ -1,6 +1,3 @@
-# Philip's Portfolio
-
-
 # Project 01: Artist Recommender System
 
 The goal for this project was to build an artist recommendation system based on the last FM dataset. The dataset can be found through this [link](https://grouplens.org/datasets/hetrec-2011/).
