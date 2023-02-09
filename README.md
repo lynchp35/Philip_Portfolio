@@ -81,3 +81,7 @@ If you want to tune alpha you can run the line below. This tunes alpha while kee
 Once the cross validation model is done the results are saved to "cross_validation_results/different_alpha.csv". I will discuss this further in the overview.pdf and the ANALYSIS.md file.
 
 Once I have picked the values for -ku, -rp,-exn and -a. I will train the model using all the training data and evaluate on the unseen test data using the python script main.py.
+
+remoaethee benbaQter/retLab
+
+This text was recognized by the built-in Ocrad engine. A better transcription may be attained by right clicking on the selection and changing the OCR engine to "Tesseract" (under the "Language" menu). This message can be removed in the future by unchecking "OCR Disclaimer" (under the Options menu). More info: http://projectnaptha.com/ocrad
