@@ -39,15 +39,6 @@ The goal of this project is to develop a Naïve Bayes classifier to analyse the 
 2. Once the film reviews have been process I train and evaluate the model using the Python scripts training.py and evaluate.py. The training script has one tuneable parameter and this is the alpha value used for [Laplace smoothing](https://towardsdatascience.com/laplace-smoothing-in-na%C3%AFve-bayes-algorithm-9c237a8bdece).
 
    1. This is the value used for Laplace smoothing, as seen below. Laplace smoothing is used to account for words that appear in one class but not the other. The range of values for alpha used in the python script are [0.01,0.1,0.25,0.5,0.75,1.0, 2.0].
-
-   $$
-   \hat{P}(w_i|c) = \frac{count(w_i, c)+\alpha}{(\sum_{w \in V}count(w,c))+\alpha|V|} 
-   $$
-
-   $$
-
-
-   $$
 3. Cross-validation, through the python script cross_val_training.py I pick the hyper-parameters for the Naïve Bayes model using 10-fold cross-validation.
 
    This script imports the classes from the files:
