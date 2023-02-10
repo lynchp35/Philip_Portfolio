@@ -17,7 +17,7 @@ My work can be split into four main parts.
 3. The third part can be found in the notebook [02_further_data_analysis.ipynb,](https://github.com/lynchp35/DS_4th_Year/blob/main/CA4015/Assignment%203%20Recommender%20Systems/02_further_data_analysis.ipynb) I used this notebook to do further analysis of the processed data and also looked at the additional scraped data.
 4. The final and most interesting part is the recommendation system found in the notebook [recommender_system.ipynb.](https://github.com/lynchp35/DS_4th_Year/blob/main/CA4015/Assignment%203%20Recommender%20Systems/recommender_system.ipynb) The motivation that I had for this notebook was to create a similar user experience to the setup process of Spotify. I wanted to create an interactive application where a user can input data on themselves such as their favourite music genres, artists, and their rating of them. To be able to make an interactive application I used the Python libraries Ipywidgets and IPython.  After collecting the new user's data I used different methods for artist recommendation:
    1. The first method is content-based filtering, which involved using pre-trained word embedding from the library SentenceTransformer. I used the user's favourite genres and the genres of the artists to compute a similarity score between them. I then return the top 20 most similar artists based on their scores.
-   1. The second method used collaborative filtering, this time I used the library Suprise and the Singular Value Decomposition(SVD) model. This model aims to recommend artists to a user based on the assumption that similar users like similar artists. i.e If user1 likes artist1, artist2 and user1 likes artist1, artist2, artist3, user1 may also like artist3.
+   2. The second method used collaborative filtering, this time I used the library Suprise and the Singular Value Decomposition(SVD) model. This model aims to recommend artists to a user based on the assumption that similar users like similar artists. i.e If user1 likes artist1, artist2 and user1 likes artist1, artist2, artist3, user1 may also like artist3.
 
 Below I show how I used Ipywidgets and IPython to collect the user's data.
 
@@ -41,7 +41,12 @@ The goal of this project is to develop a Naïve Bayes classifier to analyse the 
    1. This is the value used for Laplace smoothing, as seen below. Laplace smoothing is used to account for words that appear in one class but not the other. The range of values for alpha used in the python script are [0.01,0.1,0.25,0.5,0.75,1.0, 2.0].
 
    $$
-   \hat{P}(w_i|c) = \frac{count(w_i, c)+\alpha}{(\sum_{w \in V}count(w,c))+\alpha|V|}
+   \hat{P}(w_i|c) = \frac{count(w_i, c)+\alpha}{(\sum_{w \in V}count(w,c))+\alpha|V|} 
+   $$
+
+   $$
+
+
    $$
 3. Cross-validation, through the python script cross_val_training.py I pick the hyper-parameters for the Naïve Bayes model using 10-fold cross-validation.
 
@@ -55,8 +60,6 @@ The goal of this project is to develop a Naïve Bayes classifier to analyse the 
 ## Results
 
 In this section, I will showcase the accuracy achieved by various hyper-parameters and the final accuracy on the unseen test set.
-
-
 
 The hyper-parameter tuning with the cross-validation script was split into two parts:
 
@@ -77,7 +80,6 @@ Most parameters had similar accuracy but I decided to continue with the paramete
 
 ![BoxPlot](imgs\nbc_t_hp_acc.PNG)
 
-
 ### Test set accuracy
 
 I then finally evaluated the model using the unseen test set. I trained the model using the following tuned hyper-parameters:
@@ -93,7 +95,7 @@ This model achived an accuracy of 86% and had the confusion presented below:
 
 # Irish Property Price Analysis
 
-For this project, my goal was to create a single novel housing dataset from https://www.myhome.ie and https://www.daft.ie. The housing market is a major concern for many individuals and families in Ireland. My motivation is to provide statistics and build a better tool for homebuyers and help them gain a better understanding of the factors that influence housing prices. We aim to develop a dataset that aims to provide users that are searching for homes and different property types an easy and efficient way to search for these properties and find information relating to the prices and areas in Ireland. 
+For this project, my goal was to create a single novel housing dataset from https://www.myhome.ie and https://www.daft.ie. The housing market is a major concern for many individuals and families in Ireland. My motivation is to provide statistics and build a better tool for homebuyers and help them gain a better understanding of the factors that influence housing prices. We aim to develop a dataset that aims to provide users that are searching for homes and different property types an easy and efficient way to search for these properties and find information relating to the prices and areas in Ireland.
 
 The main components of this project involved, scraping the house data, cleaning the data and creating an interactive visualisation that potential users could easily use to help them make a more informed decision before buying a property.
 
@@ -101,5 +103,5 @@ The main components of this project involved, scraping the house data, cleaning 
 2. The cleaning processes was done using custom functions built for PySpark dataframes. [clean_all_property_data.py](https://github.com/lynchp35/irish_property_analysis/blob/main/clean_all_property_data.py "clean_all_property_data.py")
 3. The interactive dashboards were built with the Bokeh library and I used PSQL as the back to query the results.
    1. The first dashboard was static and built with the Python Script [dashboard.py](https://github.com/lynchp35/irish_property_analysis/blob/main/dashboard.py "dashboard.py"), the script produce the HTML file [static_dashboard.html](https://github.com/lynchp35/irish_property_analysis/blob/main/static_dashboard.html "static_dashboard.html").![1675953349140](image/README/1675953349140.png)
-   2. The second dashboard allowed the user to query data based on the property they were interested. I built this using the script [interactive_dashboard.py](https://github.com/lynchp35/irish_property_analysis/blob/main/interactive_dashboard.py "interactive_dashboard.py"). 
+   2. The second dashboard allowed the user to query data based on the property they were interested. I built this using the script [interactive_dashboard.py](https://github.com/lynchp35/irish_property_analysis/blob/main/interactive_dashboard.py "interactive_dashboard.py").
       ![img](imgs/example_dashboard.PNG)
