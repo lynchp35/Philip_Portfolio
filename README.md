@@ -8,9 +8,8 @@ Email: philip.lynch35@mail.dcu.ie
 [LinkedIn](https://www.linkedin.com/in/philip-lynch-m35/)
 
 # Project 01: Evaluating Text-to-Video Models
-# Evaluating Text-to-Video Models
 
-This project represents a convergence of machine learning, video and image processing, and natural language processing (NLP) in pursuit of a novel and innovative quality evaluation metric for video output from text-to-video models. The project combines a custom-built image naturalness and human interpretability classifier with advanced text similarity techniques to produce more precise and dependable performance scores. This initiative employs the latest state-of-the-art image generation and processing technology to enhance user experience and elevate quality of generated videos.
+This project represents a convergence of machine learning, video and image processing, and natural language processing (NLP) in pursuit of a novel and innovative quality evaluation metric for video output from text-to-video models. The project combines a custom-built image naturalness and a human interpretable classifier with advanced text similarity techniques to produce more precise and dependable performance scores. This initiative employs the latest state-of-the-art image generation and processing technology to enhance user experience and elevate quality of generated videos.
 
 Our paper covering our work can be found [here](assets/Chivileva_Lynch_FinalYearProject.pdf).
 
