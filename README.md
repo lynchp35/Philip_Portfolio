@@ -2,11 +2,46 @@
 
 ## Introduction
 
-My name is Philip Lynch, I am currently a 4th-year Data Science student at Dublin City University (DCU). I am currently looking for summer work and eager to learn new things
-My contact details are:
-Email: philip.lynch35@mail.dcu.ie, [LinkedIn](https://www.linkedin.com/in/philip-lynch-m35/)
+My name is Philip Lynch, I am currently a 4th-year Data Science student at Dublin City University (DCU). I am currently looking for summer work and eager to learn new things  
+My contact details are:  
+Email: philip.lynch35@mail.dcu.ie  
+[LinkedIn](https://www.linkedin.com/in/philip-lynch-m35/)
 
-# Project 01: Artist Recommender System
+# Project 01: Evaluating Text-to-Video Models
+# Evaluating Text-to-Video Models
+
+This project represents a convergence of machine learning, video and image processing, and natural language processing (NLP) in pursuit of a novel and innovative quality evaluation metric for video output from text-to-video models. The project combines a custom-built image naturalness and human interpretability classifier with advanced text similarity techniques to produce more precise and dependable performance scores. This initiative employs the latest state-of-the-art image generation and processing technology to enhance user experience and elevate quality of generated videos.
+
+Our paper covering our work can be found [here](assets/Chivileva_Lynch_FinalYearProject.pdf).
+
+## About the Project
+
+![Metric Workflow](imgs/metric_ensemble2.png)
+The metric workflow shown above, can be divided into two parts.
+The first part involves data generation, depicted in blue and yellow boxes on the left-hand side of the figure. Starting with an initial text prompt, we generate a video using a T2V model. Then, we use the generated video to produce a list of captions using BLIP-2.
+The second part involves the ensemble of three metrics, which starts with the Text Similarity Metric presented in Text Similarity, this metric calculates the similarity score between the original text prompt and the BLIP-generated captions, ranging from 0 to 1. Next, we use the Naturalness Metric this measures how realistic and natural an video appears. Lastly, Average Precision is calculated using the objects in the video based on the original prompt and the BLIP-generated captions, with a possible range of 0 to 1.
+
+
+---
+## Project Objectives
+- [x]    Generate 35 unique videos for each T2V model based on the prompts in the file "/generated_videos/prompts.txt"
+- [x] Use BLIP to caption the frames of the generated videos in the "generated_videos/" directory
+- [x] Find a way to accurately interpret non-natural videos that are not easily comprehensible by humans
+    - [x] Assess existing methods for measuring image naturalness
+    - [x] Investigate the statistical properties of images that can impact their naturalness and aid in distinguishing non-interpretable images
+    - [x] Modify and implement inception score to evaluate the quality of generated images
+    - [x] Produce numeric data that represents videos and integrates all methodologies
+    - [x] Create a custom-build image naturalness classifier
+- [x] Caculate the IoU (Intersect over Union) and AP(Average Precision) of the frames of a video based on the original captions used to generate the videos and the BLIP generated captions using Grouning DINO (GDINO) for zero-shot object detction.
+- [X] Combine the naturalism and semantic matching metrics to create our novel metric.
+- [ ] Evaluate the accuracy of the model aganist human evaluation.
+- [ ] Increase the number of prompts used to 100.
+- [ ] Create a tool to explain areas where the generated video fails to capture the original caption. 
+---
+## Project Highlights
+The study highlights the constraints of the current evaluation metrics used in the literature, identifying the need for a new evaluation metric that addresses these limitations. Our main contribution is a proposed evaluation metric which involves addressing two critical challenges: image naturalness and semantic matching. Our research demonstrates that the novel metric outperforms a commonly used metric, indicating that it is a reliable and valid evaluation tool.
+
+# Project 02: Artist Recommender System
 
 The goal of this project was to build an artist recommendation system based on the last FM dataset. The dataset can be found through this [link](https://grouplens.org/datasets/hetrec-2011/).
 
@@ -27,7 +62,7 @@ Example recommendation using content-based filtering.
 
 ![1675941647819](image/TEST/1675941647819.png)
 
-# Project 02: Film Review Sentiment Analysis.
+# Project 03: Film Review Sentiment Analysis.
 
 The goal of this project is to develop a Naïve Bayes classifier to analyse the sentiment of a film review. The data used was provided [Cornell](https://www.cs.cornell.edu/people/pabo/movie-review-data/), which includes 2000 reviews evenly split between the two classes, negative or positive. The project involves five main parts these are:
 
